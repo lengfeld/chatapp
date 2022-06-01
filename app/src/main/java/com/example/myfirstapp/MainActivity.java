@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         String message = editText.getText().toString();
 
         OkHttpClient client = new OkHttpClient();
-        RequestBody body = RequestBody.create(MediaType.parse("text/plain"), message);
+        RequestBody body = RequestBody.create(message, MediaType.parse("text/plain"));
         Request request = new Request.Builder()
                 .url("https://lengfeld.xyz/chat")
                 .put(body) // PUT
